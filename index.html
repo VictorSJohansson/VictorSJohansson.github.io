@@ -33,18 +33,19 @@
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
+	<a-assets>
+        <a-asset-item id="tree-obj" src="https://victorsjohansson.github.io/StylizedCharacter.obj"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="https://victorsjohansson.github.io/StylizedCharacter.mtl"></a-asset-item>
+      </a-assets>
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'trex' below) -->
         <a-nft
             type='nft' url='https://victorsjohansson.github.io/tpose'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <a-entity
-                a-obj-model='https://victorsjohansson.github.io/StylizedCharacter.obj'
-                scale="100 100 100"
-                position="1 1 0"
+            <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"
+                scale="1 1 1"
+                position="1 1 1"
                 ></a-entity>
 
-            </a-entity>
         </a-nft>
 		<a-entity camera></a-entity>
     </a-scene>
